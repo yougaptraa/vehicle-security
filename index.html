@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo dashboard keamanan kendaraan berbasis IoT untuk portofolio belajar.">
+  <title>IoT Vehicle Security Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark">⌁</div>
+      <div>
+        <p class="eyebrow">PORTFOLIO PROJECT · DEMO</p>
+        <h1>IoT Vehicle Security</h1>
+      </div>
+      <span class="demo-badge">SIMULASI</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">CONTROL CENTER</p>
+      <h2>Dashboard Keamanan Kendaraan</h2>
+      <p class="muted">Antarmuka demonstrasi untuk konsep autentikasi dan pemantauan kendaraan. Tidak terhubung ke kendaraan atau perangkat ESP32 sungguhan.</p>
+    </section>
+
+    <section class="status-grid" aria-label="Status sistem">
+      <article class="panel status-card">
+        <div class="card-heading"><span>Status kendaraan</span><span class="dot" id="statusDot"></span></div>
+        <p class="status-value" id="vehicleStatus">TERKUNCI</p>
+        <p class="muted small" id="statusDescription">Kendaraan dalam kondisi aman.</p>
+      </article>
+      <article class="panel status-card">
+        <div class="card-heading"><span>Sistem alarm</span><span class="icon">◉</span></div>
+        <p class="status-value" id="alarmStatus">SIAGA</p>
+        <p class="muted small">Pemantauan getaran simulasi</p>
+      </article>
+      <article class="panel status-card">
+        <div class="card-heading"><span>Koneksi perangkat</span><span class="icon">⌁</span></div>
+        <p class="status-value"><span class="online-dot"></span> DEMO AKTIF</p>
+        <p class="muted small">Status lokal pada browser</p>
+      </article>
+    </section>
+
+    <section class="main-grid">
+      <article class="panel controls">
+        <div class="section-heading">
+          <div><p class="eyebrow">KONTROL</p><h3>Kontrol simulasi</h3></div>
+          <span class="subtle-icon">⚙</span>
+        </div>
+        <div class="button-stack">
+          <button class="btn btn-primary" id="unlockBtn">Buka kunci (simulasi)</button>
+          <button class="btn btn-secondary" id="lockBtn">Kunci kendaraan</button>
+          <button class="btn btn-warning" id="vibrationBtn">Simulasikan getaran</button>
+          <button class="btn btn-quiet" id="resetBtn">Reset demo</button>
+        </div>
+        <p class="notice"><strong>Catatan:</strong> tombol hanya mengubah tampilan demo di browser. Tidak mengendalikan kendaraan sungguhan.</p>
+      </article>
+
+      <article class="panel log-panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">AKTIVITAS</p><h3>Log kejadian</h3></div>
+          <button class="text-button" id="clearLogBtn">Hapus log</button>
+        </div>
+        <ul class="event-list" id="eventList" aria-live="polite"></ul>
+      </article>
+    </section>
+
+    <footer>
+      <span>Built as a beginner-friendly portfolio demo</span>
+      <span>HTML · CSS · JavaScript</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
